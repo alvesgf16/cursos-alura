@@ -1,0 +1,57 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var x = 300;
+    var y = 200;
+    var esquerda = [37, 65];
+    var cima = [38, 87];
+    var direita = [39, 68];
+    var baixo = [40, 83];
+    var taxa = 10;
+
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo (x, y, raio) {
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaTela() {
+       pincel.clearRect(0, 0, 600, 400);        
+    }
+
+    function atualizaTela() {
+        limpaTela();
+        desenhaCirculo(x, y, 10);
+    }
+
+    function moverCirculo(evento) {
+        var direcao = evento.keyCode;
+
+        for (var i = 0; i < 2; i++) {
+            if (direcao == esquerda[i]) {
+                x -= taxa;
+                break;
+            } else if (direcao == cima[i]) {
+                y -= taxa;
+                break;
+            } else if (direcao == baixo[i]) {
+                y += taxa;
+                break;
+            } else if (direcao == direita[i]) {
+                x += taxa;
+                break;
+            }    
+        }
+    }
+
+    setInterval(atualizaTela, 20)
+    document.onkeydown = moverCirculo
+    
+</script>

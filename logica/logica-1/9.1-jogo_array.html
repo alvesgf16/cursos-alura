@@ -1,0 +1,69 @@
+<meta charset=UTF-8>
+
+<h1>Adivinhe em que número eu estou pensando</h1>
+<br>
+<input/>
+<br>
+<button>Jogar</button>
+
+<script>
+	
+	var numerosPensados = pensaNumeros(5);
+
+	var input = document.querySelector("input");
+	var button = document.querySelector("button");
+
+	function sorteia(n) {
+		return (Math.random() * n).toFixed();
+	}
+
+	function pensaNumeros(facilidade) {
+		var numerosPensados = [];
+		var quantidade = 1;
+
+		while(quantidade <= facilidade) {
+			numeroPensado = sorteia();			
+
+			if (numeroPensado != 0) {
+				var repetido = false;
+
+				for(var i = 0; i < numerosPensados.length; i++) {
+					if (numerosPensados[i] == numeroPensado) {
+						repetido = true;
+						break
+					}
+				}
+
+				if repetido == false {
+					numerosPensados.push(numeroPensado);
+					quantidade++;
+				}
+			}
+		}
+
+		return numerosPensados;
+	}
+
+	function joga() {
+		var acertou = false;
+
+		for(var posicao = 0; posicao < numerosPensados.length; posicao++) {
+			if (input.value == numerosPensados[posicao]) {
+				alert("Você acertou!");
+				acertou = true;
+				break;
+			}
+		}
+
+		if (acertou == false) {
+			alert("Você errou!");
+		}
+
+		input.value = "";
+		input.focus();
+	}
+
+	input.focus();
+	button.onclick = joga;
+	
+</script>

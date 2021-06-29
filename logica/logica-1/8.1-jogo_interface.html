@@ -1,0 +1,35 @@
+<meta charset=UTF-8>
+
+<h1>Adivinhe em que número eu estou pensando</h1>
+<br>
+<input/>
+<br>
+<button>Jogar</button>
+
+<script>
+	
+	var numeroPensado = sorteia(10); 
+	var input = document.querySelector("input");
+	var button = document.querySelector("button");
+
+	function sorteia(n) {
+		return (Math.random() * n).toFixed();
+	}
+
+	function joga() {
+		if (input.value == numeroPensado) {
+			alert("Você acertou!");
+		} else if (input.value > numeroPensado) {
+			alert("Você errou, o número pensado é menor que o chute.");
+		} else if (input.value < numeroPensado) {
+			alert("Você errou, o número pensado é maior que o chute.");
+		}
+
+		input.value = "";
+		input.focus();
+	}
+
+	input.focus();
+	button.onclick = joga;
+	
+</script>

@@ -1,0 +1,301 @@
+/*CSS comum a todas as páginas*/
+body {
+	font-family:  'Montserrat', sans-serif;
+}
+
+header {
+	padding: 20px 0;
+	background: #BBBBBB;
+}
+
+.caixa {
+	position: relative;
+	margin: 0 auto;
+	width: 940px;
+}
+
+nav {
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+nav li {
+	display:  inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	font-size: 22px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000000;
+}
+
+nav a:hover {
+	text-decoration: underline;
+	color: #C78C19;
+}
+
+main {
+}
+
+
+footer {
+	padding: 40px 0;
+	background: url("imagens/bg.jpg");
+	text-align: center;
+}
+
+.copyright {
+	margin-top: 20px;
+	font-size: 13px;
+	color: #FFFFFF;
+}
+
+
+/*CSS da página inicial*/
+.banner {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+	object-position: 0 60%;
+}
+
+.principal {
+	margin: 0 auto;
+	width: 940px;
+	padding: 3em 0;
+	background: #FEFEFE;
+}
+
+.titulo-principal {
+	clear: left;
+	margin: 0 0 1em;
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.utensilios {
+	float:  left;
+	margin: 0 20px 20px 0;
+	width: 120px;
+}
+
+.principal p {
+	margin: 0 0 1em;
+}
+
+.principal strong {
+	font-weight: bold;
+}
+
+.principal em {
+	font-style: italic;
+}
+
+.mapa {
+	padding: 3em 0;
+	background: linear-gradient(#FEFEFE,#888888);
+}
+
+.mapa p {
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+.mapa-conteudo {
+	margin:  0 auto;
+	box-shadow: 10px 10px 10px 0 #000000;
+	width:  940px;
+}
+
+.beneficios {
+	padding: 3em;
+	background: #888888;
+}
+
+.conteudo-beneficios {
+	margin: 0 auto;
+	width: 640px;
+	padding: 25px 0;
+}
+
+.lista-beneficios {
+	display: inline-block;
+	vertical-align: top;
+	width: 40%;
+}
+
+.lista-beneficios li:before {
+	content: "✓";
+}
+
+.lista-beneficios li {
+	line-height: 1.5;
+}
+
+.lista-beneficios li:first-child {
+	font-weight: bold;
+}
+
+.imagem-beneficios {
+	opacity: 1;
+	transition: 400ms;
+	box-shadow: 10px 10px 10px 0 #000000;
+	width: 60%;
+}
+
+.imagem-beneficios:hover {
+	opacity: 0.3;
+}
+
+.video {
+	margin: 2em auto;
+	box-shadow: 10px 10px 10px 0 #000000;
+	width: 560px;
+}
+
+/*CSS da página de produtos*/
+.produtos {
+	margin:  0 auto;
+	width: 940px;
+	padding: 50px 0;
+}
+
+.produtos li {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 1.5%;
+	border: 2px solid #000000;
+	border-radius: 10px;
+	box-sizing: border-box;
+	width: 30%;
+	padding: 30px 20px;
+	text-align: center;
+}
+
+.produtos li:hover {
+	border-color: #C78C19;
+}
+
+.produtos h2 {
+	font-size:  30px;
+	font-weight: bold;
+}
+
+.produtos li:hover h2 {
+	font-size: 34px;
+}
+
+.produto-descricao {
+	font-size: 18px;
+}
+
+.produto-preço {
+	margin-top: 10px;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+/*CSS da página de contato*/
+form {
+	margin:  40px auto 40px;
+	width: 50%;
+}
+
+form label, form legend {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.input-padrao {
+	display: block;
+	margin-bottom: 20px;
+	width: 100%;
+	padding:  10px 25px;
+}
+
+.checkbox {
+	margin:  20px 5px;
+}
+
+.enviar {
+	transition: 1s all;
+	border: none;
+	border-radius: 5px;
+	width: 80%;
+	padding: 15px 0;
+	background: orange;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+}
+
+.enviar:hover {
+	transform: scale(1.2);
+	background: darkorange;
+}
+
+table {
+	margin: 20px auto 40px;
+}
+
+thead {
+	background: #555555;
+	font-weight: bold;	
+	color: white;
+}
+
+th, td {
+	border: 1px solid #000000;
+	padding: 8px 15px;
+}
+
+/*CSS responsivo*/
+@media screen and (max-width: 480px) {
+	.caixa, .principal, .mapa-conteudo, .conteudo-beneficios, .video, .produtos, form {
+		width: auto;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+	}
+
+	.principal p {
+		margin: 0 1em 1em;
+	}
+
+	.lista-beneficios {
+		width: 100%;
+	}
+
+	.imagem-beneficios {
+		margin-top: 2em;
+		width: 100%;
+	}
+
+	.produtos li {
+		margin: 0 0 10px;
+		width: 100%;
+	}
+
+	form label, form legend {
+		margin: 0 1em 10px;
+	}
+
+	.input-padrao {
+		width: 80%;
+	}
+
+	.enviar {
+		margin: 0px 10%;
+	}

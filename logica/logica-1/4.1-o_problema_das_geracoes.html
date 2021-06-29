@@ -1,0 +1,16 @@
+<meta charset=UTF-8>
+
+<script>
+	function pulaLinha() {
+		document.write("<br>");
+	}
+	function mostra(texto) {
+		document.write(texto);
+		pulaLinha();
+	}
+	var anoAtual = 2021;
+	var anoDescobrimento = 1500;
+	var anosGeracao = 28;
+	var numeroGeracoes = (anoAtual - anoDescobrimento) / anosGeracao;
+	mostra("Desde " + anoDescobrimento + " até " + anoAtual + " se passaram " + Math.trunc(numeroGeracoes) + " gerações.");
+</script>
