@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const BotaoConclui = () => {
 	const botaoConclui = document.createElement('button');
 	botaoConclui.classList.add('check-button');
@@ -6,7 +8,7 @@ const BotaoConclui = () => {
 	botaoConclui.addEventListener('click', concluirTarefa);
 
 	return botaoConclui;
-}
+};
 
 const concluirTarefa = (evento) => {
 	const botaoConclui = evento.target;
@@ -14,6 +16,6 @@ const concluirTarefa = (evento) => {
 	const tarefaCompleta = botaoConclui.parentElement;
 
 	tarefaCompleta.classList.toggle('done');
-}
+};
 
-export default BotaoConclui
+export default BotaoConclui;

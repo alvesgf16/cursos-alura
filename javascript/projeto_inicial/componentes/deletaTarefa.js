@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const BotaoDeleta = () => {
 	const botaoDeleta = document.createElement('button');
 	botaoDeleta.classList.add('');
@@ -6,7 +8,7 @@ const BotaoDeleta = () => {
 	botaoDeleta.addEventListener('click', deletarTarefa);
 
 	return botaoDeleta;
-}
+};
 
 const deletarTarefa = (evento) => {
 	const botaoDeleta = evento.target;
@@ -14,6 +16,6 @@ const deletarTarefa = (evento) => {
 	const tarefaDeletada = botaoDeleta.parentElement;
 
 	tarefaDeletada.remove();
-}
+};
 
-export default BotaoDeleta
+export default BotaoDeleta;
