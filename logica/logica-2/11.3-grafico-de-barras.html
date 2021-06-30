@@ -22,7 +22,7 @@
 				pincel.fillStyle = cor;
 				pincel.beginPath();
 				pincel.arc(x, y, raio, 0, 2 * Math.PI);
-				pincel.fill()
+				pincel.fill();
 			}
 
 			function desenhaFlor(x, y) {
@@ -45,7 +45,7 @@
 					var somaAltura = 0;
 
 					for(var i = 0; i < serie.length; i++) {
-						desenhaRetangulo(x, y + somaAltura, 50, serie[i], cores[i])
+						desenhaRetangulo(x, y + somaAltura, 50, serie[i], cores[i]);
 						somaAltura += serie[i];
 					}
 				}	
@@ -55,7 +55,7 @@
 			var cores = ['blue', 'green', 'yellow', 'red'];
 
 			desenhaBarra(50, 50, serie2015, cores, 2015);
-			desenhaBarra(150, 50, serie2016, cores, 2016)
+			desenhaBarra(150, 50, serie2016, cores, 2016);
 
 		</script>
 	</body>

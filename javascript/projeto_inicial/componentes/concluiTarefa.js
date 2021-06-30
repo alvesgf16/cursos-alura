@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 const BotaoConclui = () => {
 	const botaoConclui = document.createElement('button');
 	botaoConclui.classList.add('check-button');

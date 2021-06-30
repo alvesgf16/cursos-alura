@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 const BotaoDeleta = () => {
 	const botaoDeleta = document.createElement('button');
 	botaoDeleta.classList.add('');

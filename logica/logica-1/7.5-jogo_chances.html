@@ -27,7 +27,7 @@
 			}
 
 			function joga() {
-				var divResultado = document.getElementById("resultado")
+				var divResultado = document.getElementById("resultado");
 
 				if (chances == 0) {
 					if (input.value == numeroPensado) {
@@ -40,13 +40,13 @@
 						mostra("<h1>Adivinhe em que número eu estou pensando</h1><br>Você acertou!");
 					} else if (input.value > numeroPensado) {
 						htmlResultado = "Você errou, o número pensado é menor que o chute. Chances restantes: " + chances;
-						divResultado.innerHTML = htmlResultado
+						divResultado.innerHTML = htmlResultado;
 						chances--;
 						input.value = "";
 						input.focus();
 					} else if (input.value < numeroPensado) {
 						htmlResultado = "Você errou, o número pensado é maior que o chute. Chances restantes: " + chances;
-						divResultado.innerHTML = htmlResultado
+						divResultado.innerHTML = htmlResultado;
 						chances--;
 						input.value = "";
 						input.focus();

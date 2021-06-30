@@ -22,7 +22,7 @@
 				pincel.fillStyle = cor;
 				pincel.beginPath();
 				pincel.arc(x, y, raio, 0, 2 * Math.PI);
-				pincel.fill()
+				pincel.fill();
 			}
 
 			function desenhaFlor(x, y) {
@@ -41,13 +41,13 @@
 
 			for (x = 50; x < 600; x += 100) {
 				for (y = 50; y < 400; y += 100) {
-					desenhaFlor(x, y)
+					desenhaFlor(x, y);
 				}
 			}
 
 			for (x = 0; x <= 600; x += 100) {
 				for (y = 0; y <= 400; y += 100) {
-					desenhaFlor(x, y)
+					desenhaFlor(x, y);
 				}
 			}
 

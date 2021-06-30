@@ -42,11 +42,11 @@
         }
 
         function limpaTela() {
-            pincel.clearRect(0, 0, 600, 400)
+            pincel.clearRect(0, 0, 600, 400);
         }
 
         function trocaBandeira() {
-            limpaTela()
+            limpaTela();
 
             if (bandeiraVencedor) {
                 desenhaBandeiraBrasil();
@@ -54,10 +54,10 @@
                 desenhaBandeiraAlemanha();
             }
 
-            bandeiraVencedor = !bandeiraVencedor
+            bandeiraVencedor = !bandeiraVencedor;
         }
 
-        desenhaBandeiraBrasil()
+        desenhaBandeiraBrasil();
         setInterval(trocaBandeira, 3000);
 
         </script>

@@ -8,18 +8,18 @@
 
 		<script>
 
-			var tela = document.querySelector('canvas')
-			var pincel = tela.getContext('2d')
+			var tela = document.querySelector('canvas');
+			var pincel = tela.getContext('2d');
 
 			function desenhaEsquadro(xa, ya, xc, yc, esp, cor) {
-				pincel.fillStyle = cor
+				pincel.fillStyle = cor;
 				pincel.beginPath();
 				pincel.moveTo(xa, ya);
 				pincel.lineTo(xc, yc);
 				pincel.lineTo(xa, yc);
 				pincel.fill();
 
-				pincel.fillStyle = 'white'
+				pincel.fillStyle = 'white';
 				pincel.beginPath();
 				pincel.moveTo(xa + esp, ya + 2.5 * esp);
 				pincel.lineTo(xc - 2.5 * esp, yc - esp);
@@ -27,7 +27,7 @@
 				pincel.fill();
 			}
 
-			desenhaEsquadro(50, 50, 400, 400, 30, 'black')
+			desenhaEsquadro(50, 50, 400, 400, 30, 'black');
 			
 		</script>
 	</body>

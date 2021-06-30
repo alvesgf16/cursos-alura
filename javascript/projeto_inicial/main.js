@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 import BotaoConclui from './componentes/concluiTarefa.js';
 import BotaoDeleta from './componentes/deletaTarefa.js';
 
