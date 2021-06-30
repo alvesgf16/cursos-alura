@@ -1,29 +1,34 @@
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Receitas do Yan</h1>
 
-<h1>Receitas do Yan</h1>
+        <script>
+            var ingredientes = [];
+            var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+            var contador = 1;
 
-<script>
-    var ingredientes = [];
-    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
-    var contador = 1;
+            while(contador <= quantidade) {
+                var ingrediente = prompt("Informe o ingrediente " + contador);
+                var repetido = false
 
-    while(contador <= quantidade) {
-        var ingrediente = prompt("Informe o ingrediente " + contador);
-        var repetido = false
+                for (var i = 0; i < ingredientes.length; i++) {
+                    if (ingrediente == ingredientes[i]) {
+                        repetido = true;
+                        alert("Você já adicionou esse ingrediente! Favor informar um novo.");
+                        break;
+                    }
+                }
 
-        for (var i = 0; i < ingredientes.length; i++) {
-            if (ingrediente == ingredientes[i]) {
-                repetido = true;
-                alert("Você já adicionou esse ingrediente! Favor informar um novo.");
-                break;
+                if (repetido == false) {
+                    ingredientes.push(ingrediente);
+                    contador++;
+                }  
             }
-        }
 
-        if (repetido == false) {
-            ingredientes.push(ingrediente);
-            contador++;
-        }  
-    }
-
-    console.log(ingredientes);
-</script>
+            console.log(ingredientes);
+        </script>
+    </body>

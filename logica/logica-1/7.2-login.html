@@ -1,25 +1,31 @@
-<meta charset="UTF-8">
-<script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
 
-    var loginCadastrado = "alura";
-    var senhaCadastrada = "alura321";
+            var loginCadastrado = "alura";
+            var senhaCadastrada = "alura321";
 
-    for (chances = 3; chances > 0; chances--) {
-    	var loginInformado = prompt("Informe seu nome de usuário");
-    	var senhaInformada = prompt("Informe sua senha");
+            for (chances = 3; chances > 0; chances--) {
+            	var loginInformado = prompt("Informe seu nome de usuário");
+            	var senhaInformada = prompt("Informe sua senha");
 
-    	if (loginCadastrado == loginInformado && senhaCadastrada == senhaInformada) {
-        	alert("Bem-vindo ao sistema " + loginInformado);
-            break;
-    	} else {
-        	alert("Login inválido.");
-    	}
-    }
+            	if (loginCadastrado == loginInformado && senhaCadastrada == senhaInformada) {
+                	alert("Bem-vindo ao sistema " + loginInformado);
+                    break;
+            	} else {
+                	alert("Login inválido.");
+            	}
+            }
 
-    if (loginCadastrado != loginInformado || senhaCadastrada != senhaInformada) {
-    	alert("Você errou o login 3 vezes. Sua conta foi bloqueada");
-	}
+            if (loginCadastrado != loginInformado || senhaCadastrada != senhaInformada) {
+            	alert("Você errou o login 3 vezes. Sua conta foi bloqueada");
+        	}
 
-    
+            
 
-</script>
+        </script>
+    </body>

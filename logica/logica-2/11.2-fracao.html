@@ -1,39 +1,46 @@
-<canvas width="600" height="400"></canvas>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<canvas width="600" height="400"></canvas>
 
-<script>
+		<script>
 
-	var tela = document.querySelector('canvas');
-	var pincel = tela.getContext('2d');
+			var tela = document.querySelector('canvas');
+			var pincel = tela.getContext('2d');
 
-	function desenhaQuadrado(x, y, cor) {
-		pincel.fillStyle = cor;
-		pincel.fillRect(x, y, 100, 100);
-		pincel.strokeStyle = 'black';
-		pincel.strokeRect(x, y, 100, 100);
-	}
+			function desenhaQuadrado(x, y, cor) {
+				pincel.fillStyle = cor;
+				pincel.fillRect(x, y, 100, 100);
+				pincel.strokeStyle = 'black';
+				pincel.strokeRect(x, y, 100, 100);
+			}
 
-	function desenhaCirculo(x, y, raio, cor) {
-		pincel.fillStyle = cor;
-		pincel.beginPath();
-		pincel.arc(x, y, raio, 0, 2 * Math.PI);
-		pincel.fill()
-	}
+			function desenhaCirculo(x, y, raio, cor) {
+				pincel.fillStyle = cor;
+				pincel.beginPath();
+				pincel.arc(x, y, raio, 0, 2 * Math.PI);
+				pincel.fill()
+			}
 
-	function desenhaFlor(x, y) {
-		desenhaCirculo(x, y, 10, 'red');
-		desenhaCirculo(x, y - 20, 10, 'yellow');
-		desenhaCirculo(x + 20, y, 10, 'black');
-		desenhaCirculo(x, y + 20, 10, 'blue');
-		desenhaCirculo(x - 20, y, 10, 'orange');
-	}
+			function desenhaFlor(x, y) {
+				desenhaCirculo(x, y, 10, 'red');
+				desenhaCirculo(x, y - 20, 10, 'yellow');
+				desenhaCirculo(x + 20, y, 10, 'black');
+				desenhaCirculo(x, y + 20, 10, 'blue');
+				desenhaCirculo(x - 20, y, 10, 'orange');
+			}
 
-	pincel.font = '20px Georgia';
-	pincel.fillStyle = 'black';
-	pincel.fillText('Qual é a fração?', 0, 30);
+			pincel.font = '20px Georgia';
+			pincel.fillStyle = 'black';
+			pincel.fillText('Qual é a fração?', 0, 30);
 
-	desenhaQuadrado(0, 50, 'green');
-	desenhaQuadrado(100, 50, 'green');
-	desenhaQuadrado(200, 50, 'green');
-	desenhaQuadrado(300, 50, 'white');
+			desenhaQuadrado(0, 50, 'green');
+			desenhaQuadrado(100, 50, 'green');
+			desenhaQuadrado(200, 50, 'green');
+			desenhaQuadrado(300, 50, 'white');
 
-</script>
+		</script>
+	</body>

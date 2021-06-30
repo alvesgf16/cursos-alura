@@ -1,62 +1,67 @@
-<meta charset=UTF-8>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Adivinhe em que número eu estou pensando</h1>
+		<br>
+		<input/>
+		<br>
+		<button>Jogar</button>
+		<div id=resultado></div>
 
-<h1>Adivinhe em que número eu estou pensando</h1>
-<br>
-<input/>
-<br>
-<button>Jogar</button>
-<div id=resultado></div>
-
-<script>
-	
-	function pulaLinha() {
-		document.write("<br><br>");
-	}
-	
-	function mostra(texto) {
-		document.write(texto);
-		pulaLinha();
-	}
-
-	function sorteia(n) {
-		return (Math.random() * n).toFixed();
-	}
-
-	function joga() {
-		var divResultado = document.getElementById("resultado")
-
-		if (chances == 0) {
-			if (input.value == numeroPensado) {
-				mostra("<h1>Adivinhe em que número eu estou pensando</h1><br>Você acertou!");
-			} else {
-				mostra("<h1>Adivinhe em que número eu estou pensando</h1><br>Você errou, o número pensado era " + numeroPensado + ".");
+		<script>
+			
+			function pulaLinha() {
+				document.write("<br><br>");
 			}
-		} else {
-			if (input.value == numeroPensado) {
-				mostra("<h1>Adivinhe em que número eu estou pensando</h1><br>Você acertou!");
-			} else if (input.value > numeroPensado) {
-				htmlResultado = "Você errou, o número pensado é menor que o chute. Chances restantes: " + chances;
-				divResultado.innerHTML = htmlResultado
-				chances--;
-				input.value = "";
-				input.focus();
-			} else if (input.value < numeroPensado) {
-				htmlResultado = "Você errou, o número pensado é maior que o chute. Chances restantes: " + chances;
-				divResultado.innerHTML = htmlResultado
-				chances--;
-				input.value = "";
-				input.focus();
+			
+			function mostra(texto) {
+				document.write(texto);
+				pulaLinha();
 			}
-		}
-	}
 
-	var dificuldade = parseInt(prompt("Escolha o nível de dificuldade do jogo digitando qualquer número inteiro"));
-	var numeroPensado = sorteia(dificuldade);
-	var input = document.querySelector("input");
-	var button = document.querySelector("button");
-	var chances = 2;
+			function sorteia(n) {
+				return (Math.random() * n).toFixed();
+			}
 
-	input.focus();
-	button.onclick = joga;
-	
-</script>
+			function joga() {
+				var divResultado = document.getElementById("resultado")
+
+				if (chances == 0) {
+					if (input.value == numeroPensado) {
+						mostra("<h1>Adivinhe em que número eu estou pensando</h1><br>Você acertou!");
+					} else {
+						mostra("<h1>Adivinhe em que número eu estou pensando</h1><br>Você errou, o número pensado era " + numeroPensado + ".");
+					}
+				} else {
+					if (input.value == numeroPensado) {
+						mostra("<h1>Adivinhe em que número eu estou pensando</h1><br>Você acertou!");
+					} else if (input.value > numeroPensado) {
+						htmlResultado = "Você errou, o número pensado é menor que o chute. Chances restantes: " + chances;
+						divResultado.innerHTML = htmlResultado
+						chances--;
+						input.value = "";
+						input.focus();
+					} else if (input.value < numeroPensado) {
+						htmlResultado = "Você errou, o número pensado é maior que o chute. Chances restantes: " + chances;
+						divResultado.innerHTML = htmlResultado
+						chances--;
+						input.value = "";
+						input.focus();
+					}
+				}
+			}
+
+			var dificuldade = parseInt(prompt("Escolha o nível de dificuldade do jogo digitando qualquer número inteiro"));
+			var numeroPensado = sorteia(dificuldade);
+			var input = document.querySelector("input");
+			var button = document.querySelector("button");
+			var chances = 2;
+
+			input.focus();
+			button.onclick = joga;
+			
+		</script>
+	</body>

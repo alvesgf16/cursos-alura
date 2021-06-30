@@ -1,29 +1,34 @@
-<meta charset="UTF-8">
-
-<script>
-	
-	function pulaLinha() {
-		document.write("<br>");
-	}
-
-	function mostra(frase) {
-		document.write(frase);
-		pulaLinha();
-	}
-
-	for(var linha = 1; linha <= 9; linha++) {
-		for(var coluna = 1; coluna <= 11; coluna++) {
-			if (linha % 2 == coluna % 2) {
-				document.write("*")
-			} else {
-				document.write("\xa0")
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<script>
+			
+			function pulaLinha() {
+				document.write("<br>");
 			}
-		}
 
-		pulaLinha();
-	}
-	
-</script>
+			function mostra(frase) {
+				document.write(frase);
+				pulaLinha();
+			}
+
+			for(var linha = 1; linha <= 9; linha++) {
+				for(var coluna = 1; coluna <= 11; coluna++) {
+					if (linha % 2 == coluna % 2) {
+						document.write("*")
+					} else {
+						document.write("\xa0")
+					}
+				}
+
+				pulaLinha();
+			}
+			
+		</script>
+	</body>
 
 
 
