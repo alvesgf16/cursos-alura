@@ -1,8 +1,8 @@
 class Date:
     def __init__(self, day, month, year):
-        self.day = day
-        self.month = month
-        self.year = year
+        self.__day = day
+        self.__month = month
+        self.__year = year
 
     def format(self):
-        print(f"{self.day}/{self.month}/{self.year}")
+        print(f"{self.__day}/{self.__month}/{self.__year}")
