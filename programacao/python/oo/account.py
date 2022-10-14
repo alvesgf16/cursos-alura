@@ -12,4 +12,9 @@ class Account:
         self.__balance -= amount
 
     def statement(self):
-        print(f"Balance: {self.balance} // Holder: {self.holder}")
+        print(f"Balance: {self.__balance} // Holder: {self.__holder}")
+
+    def transfer(self, amount, destination):
+        self.withdraw(amount)
+        destination.deposit(amount)
+
