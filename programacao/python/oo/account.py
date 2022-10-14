@@ -8,8 +8,15 @@ class Account:
     def deposit(self, amount):
         self.__balance += amount
 
+    def __can_withdraw(self, withdrawal_amount):
+        available_credit = self.__balance + self.__limit
+        return withdrawal_amount <= available_credit
+
     def withdraw(self, amount):
-        self.__balance -= amount
+        if self.__can_withdraw(amount):
+            self.__balance -= amount
+        else:
+            print(f"The amount {amount} is over the limit")
 
     def statement(self):
         print(f"Balance: {self.__balance} // Holder: {self.__holder}")
