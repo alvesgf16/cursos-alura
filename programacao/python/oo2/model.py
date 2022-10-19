@@ -19,11 +19,17 @@ class Media:
     def name(self, new_name):
         self._name = new_name.title()
 
+    def __str__(self):
+        return f'{self.name} - {self.year}: {self.likes} likes'
+
 
 class Film(Media):
     def __init__(self, name, year, length):
         super().__init__(name, year)
         self.length = length
+
+    def __str__(self):
+        return f'{self.name} - {self.year} - {self.length} min: {avengers.likes} likes'
 
 
 class Series(Media):
@@ -31,12 +37,18 @@ class Series(Media):
         super().__init__(name, year)
         self.seasons = seasons
 
+    def __str__(self):
+        return f'{self.name} - {self.year} - {self.seasons} seasons: {self.likes} likes'
+
 
 avengers = Film('avengers: infinity war', 2018, 149)
 avengers.like()
-print(f'{avengers.name} - {avengers.year} - {avengers.length}: {avengers.likes}')
 
 atlanta = Series('atlanta', 2016, 4)
 atlanta.like()
 atlanta.like()
-print(f'{atlanta.name} - {atlanta.year} - {atlanta.seasons}: {atlanta.likes}')
+
+films_and_series = [avengers, atlanta]
+
+for media in films_and_series:
+    print(media)
