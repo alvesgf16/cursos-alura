@@ -41,14 +41,39 @@ class Series(Media):
         return f'{self.name} - {self.year} - {self.seasons} seasons: {self.likes} likes'
 
 
+class Playlist:
+    def __init__(self, name, media):
+        self._name = name
+        self._media = media
+
+    @property
+    def listing(self):
+        return  self._media
+
+    @property
+    def size(self):
+        return len(self._media)
+
 avengers = Film('avengers: infinity war', 2018, 149)
-avengers.like()
-
 atlanta = Series('atlanta', 2016, 4)
+scary_movie = Film('scary movie', 2000, 88)
+daredevil = Series('Daredevil', 2015, 3)
+
+avengers.like()
+scary_movie.like()
+scary_movie.like()
+scary_movie.like()
+scary_movie.like()
+daredevil.like()
+daredevil.like()
+atlanta.like()
 atlanta.like()
 atlanta.like()
 
-films_and_series = [avengers, atlanta]
+films_and_series = [avengers, atlanta, daredevil, scary_movie]
+weekend_playlist = Playlist('weekend', films_and_series)
 
-for media in films_and_series:
-    print(media)
+print(f'Playlist size: {len(weekend_playlist.listing)}')
+
+for medium in weekend_playlist.listing:
+    print(medium)
