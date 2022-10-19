@@ -46,6 +46,12 @@ class Playlist:
         self._name = name
         self._media = media
 
+    def __getitem__(self, item):
+        return self._media[item]
+
+    def __len__(self):
+        return len(self._media)
+
     @property
     def listing(self):
         return  self._media
@@ -53,6 +59,7 @@ class Playlist:
     @property
     def size(self):
         return len(self._media)
+
 
 avengers = Film('avengers: infinity war', 2018, 149)
 atlanta = Series('atlanta', 2016, 4)
@@ -73,7 +80,9 @@ atlanta.like()
 films_and_series = [avengers, atlanta, daredevil, scary_movie]
 weekend_playlist = Playlist('weekend', films_and_series)
 
-print(f'Playlist size: {len(weekend_playlist.listing)}')
+print(f'Playlist size: {len(weekend_playlist)}')
 
-for medium in weekend_playlist.listing:
+for medium in weekend_playlist:
     print(medium)
+
+print(daredevil in weekend_playlist)
