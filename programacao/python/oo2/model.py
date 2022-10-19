@@ -1,4 +1,4 @@
-from abc import ABCMeta
+from abc import ABCMeta, abstractmethod
 
 
 class Media(metaclass=ABCMeta):
@@ -22,8 +22,9 @@ class Media(metaclass=ABCMeta):
     def name(self, new_name):
         self._name = new_name.title()
 
+    @abstractmethod
     def __str__(self):
-        return f'{self.name} - {self.year}: {self.likes} likes'
+        pass
 
 
 class Film(Media):
