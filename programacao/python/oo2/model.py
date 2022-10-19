@@ -1,4 +1,7 @@
-class Media:
+from abc import ABCMeta
+
+
+class Media(metaclass=ABCMeta):
     def __init__(self, name, year):
         self._name = name.title()
         self.year = year
