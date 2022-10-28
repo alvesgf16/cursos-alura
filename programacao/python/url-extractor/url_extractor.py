@@ -47,3 +47,18 @@ class URLExtractor:
             if ampersand_index == -1
             else url_parameters[value_index:ampersand_index]
         )
+
+    def __len__(self):
+        return len(self.url)
+
+    def __str__(self):
+        return (
+            self.url
+            + "\nParâmetros: "
+            + self.get_url_parameters()
+            + "\nURL Base: "
+            + self.get_base_url()
+        )
+
+    def __eq__(self, other):
+        return self.url == other.url
