@@ -27,10 +27,8 @@ def play():
         guessed = "_" not in guessed_letters
 
     if guessed:
-        clear_screen()
         display_victory_message(secret_word)
     else:
-        clear_screen()
         display_defeat_message(secret_word)
 
 
