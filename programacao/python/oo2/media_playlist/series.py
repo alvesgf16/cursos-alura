@@ -7,4 +7,7 @@ class Series(Media):
         self.seasons = seasons
 
     def __str__(self):
-        return f'{self.name} - {self.year} - {self.seasons} seasons: {self.likes} likes'
+        return (
+            f"{self.name} - {self.year} - "
+            + f"{self.seasons} seasons: {self.likes} likes"
+        )
