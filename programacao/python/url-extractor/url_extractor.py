@@ -1,6 +1,14 @@
 class URLExtractor:
     def __init__(self, url):
-        self.url = url
+        self.url = self.sanitize_url(url)
+        self.validate_url()
+
+    def sanitize_url(self, url):
+        return url.strip() if type(url) == str else ""
+
+    def validate_url(self):
+        if not self.url:
+            raise ValueError("The URL is empty")
 
     def get_base_url(self):
         question_mark_index = self.url.find("?")
