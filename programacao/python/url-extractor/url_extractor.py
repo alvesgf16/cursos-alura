@@ -1,3 +1,6 @@
+import re
+
+
 class URLExtractor:
     def __init__(self, url):
         self.url = self.sanitize_url(url)
@@ -9,6 +12,15 @@ class URLExtractor:
     def validate_url(self):
         if not self.url:
             raise ValueError("The URL is empty")
+
+        url_pattern = re.compile(
+            "(http(s)?://)?(www.)?bytebank.com(.br)?/cambio"
+        )
+
+        if url_pattern.match(self.url):
+            print("The URL is valid")
+        else:
+            raise ValueError("The URL is not valid")
 
     def get_base_url(self):
         question_mark_index = self.url.find("?")
