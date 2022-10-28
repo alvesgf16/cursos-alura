@@ -49,8 +49,7 @@ def load_secret_word(filename="words.txt", first_valid_line=0):
         words = [line.strip() for line in file]
 
     secret = random.randrange(first_valid_line, len(words))
-    secret_word = words[secret].upper()
-    return secret_word
+    return words[secret].upper()
 
 
 def initialize_guessed_letters(word):
