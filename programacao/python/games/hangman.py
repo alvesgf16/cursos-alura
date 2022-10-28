@@ -137,7 +137,7 @@ _|___
 
 def display_victory_message(secret_word):
     print(
-        f"""       ___________
+        """       ___________
       '._==_==_=_.'
       .-\\\\:      /-.
      | (|:.     |) |
