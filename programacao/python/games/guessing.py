@@ -25,7 +25,10 @@ def play():
             adjust_score(score, guess, secret_number)
 
             if round_number == total_rounds:
-                print(f"The secret number was {secret_number}. You scored {score} points.")
+                print(
+                    f"The secret number was {secret_number}. "
+                    + f"You scored {score} points."
+                )
             else:
                 display_hints(guess, secret_number)
 
@@ -33,10 +36,12 @@ def play():
 
 
 def display_opening_message():
-    print("""*****************************
+    print(
+        """*****************************
 Welcome to the Guessing game!
 *****************************
-""")
+"""
+    )
 
 
 def set_game_difficulty():
@@ -60,6 +65,7 @@ def set_game_difficulty():
     clear_screen()
     return total_rounds
 
+
 def display_round_info(round_number, total_rounds):
     print(f"Round {round_number} of {total_rounds}")
 
@@ -75,11 +81,15 @@ def ask_for_guess():
 
 def display_hints(guess, secret_number):
     if guess > secret_number:
-        print("""You missed! Your guess was bigger than the secret number.
-""")
+        print(
+            """You missed! Your guess was bigger than the secret number.
+"""
+        )
     elif guess < secret_number:
-        print("""You missed! Your guess was smaller than the secret number.
-""")
+        print(
+            """You missed! Your guess was smaller than the secret number.
+"""
+        )
 
 
 def adjust_score(score, guess, secret_number):
