@@ -3,8 +3,12 @@ import re
 
 class URLExtractor:
     def __init__(self, url):
-        self.url = self.sanitize_url(url)
+        self.__url = self.sanitize_url(url)
         self.validate_url()
+
+    @property
+    def url(self):
+        return self.__url
 
     def sanitize_url(self, url):
         return url.strip() if type(url) == str else ""
