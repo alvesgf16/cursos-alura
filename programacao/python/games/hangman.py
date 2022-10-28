@@ -21,7 +21,6 @@ def play():
 
         clear_screen()
         display_round(errors, guessed_letters)
-        
 
         hanged = errors == 6
         guessed = "_" not in guessed_letters
@@ -33,10 +32,12 @@ def play():
 
 
 def display_round(errors, guessed_letters):
-    print("""****************************
+    print(
+        """****************************
 Welcome to the Hangman game!
 ****************************
-""")
+"""
+    )
     draw_gallows(errors)
     print(" ".join(guessed_letters))
 
@@ -66,58 +67,77 @@ def mark_correct_guess(guess, guessed_letters, secret_word):
 
 
 def draw_gallows(errors):
-    print("""  _______
- |/      |""")
+    print(
+        """  _______
+ |/      |"""
+    )
 
     if errors == 0:
-        print(""" |
+        print(
+            """ |
  |
  |
- |""")
+ |"""
+        )
 
     if errors == 1:
-        print(""" |      (_)
+        print(
+            """ |      (_)
  |
  |
- |""")
+ |"""
+        )
 
     if errors == 2:
-        print(""" |      (_)
+        print(
+            """ |      (_)
  |       |
  |       |
- |""")
+ |"""
+        )
 
     if errors == 3:
-        print(""" |      (_)
+        print(
+            """ |      (_)
  |      \\|
  |       |
- |""")
+ |"""
+        )
 
     if errors == 4:
-        print(""" |      (_)
+        print(
+            """ |      (_)
  |      \\|/
  |       |
- |""")
+ |"""
+        )
 
     if errors == 5:
-        print(""" |      (_)
+        print(
+            """ |      (_)
  |      \\|/
  |       |
- |      /""")
+ |      /"""
+        )
 
     if errors == 6:
-        print(""" |      (_)
+        print(
+            """ |      (_)
  |      \\|/
  |       |
- |      / \\""")
+ |      / \\"""
+        )
 
-    print(""" |            
-_|___         
-""")
+    print(
+        """ |
+_|___
+"""
+    )
 
 
 def display_victory_message(secret_word):
-    print(f"""       ___________
+    print(
+        f"""       ___________
       '._==_==_=_.'
       .-\\\\:      /-.
      | (|:.     |) |
@@ -127,28 +147,31 @@ def display_victory_message(secret_word):
            ) (
          _.' '._
         '-------'
-Congratulations, you won!""")
+Congratulations, you won!"""
+    )
 
 
 def display_defeat_message(secret_word):
-    print(f"""    _______________         
+    print(
+        f"""    _______________
    /               \\
   /                 \\
 //                   \\/\\
 \\|   XXXX     XXXX   | /
- |   XXXX     XXXX   |/     
- |   XXX       XXX   |      
- |                   |      
+ |   XXXX     XXXX   |/
+ |   XXX       XXX   |
+ |                   |
  \\__      XXX      __/
    |\\     XXX     /|
-   | |           | |        
-   | I I I I I I I |        
-   |  I I I I I I  |        
+   | |           | |
+   | I I I I I I I |
+   |  I I I I I I  |
    \\_             _/
      \\_         _/
        \\_______/
 Gosh, you've been hanged!
-The secret word was {secret_word}""")
+The secret word was {secret_word}"""
+    )
 
 
 if __name__ == "__main__":
