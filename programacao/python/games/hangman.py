@@ -9,9 +9,7 @@ def play():
     hanged = False
     guessed = False
 
-    display_opening_message()
-    draw_gallows(errors)
-    print(" ".join(guessed_letters))
+    display_round(errors, guessed_letters)
 
     while not hanged and not guessed:
         guess = ask_for_guess()
@@ -22,9 +20,8 @@ def play():
             errors += 1
 
         clear_screen()
-        display_opening_message()
-        draw_gallows(errors)
-        print(" ".join(guessed_letters))
+        display_round(errors, guessed_letters)
+        
 
         hanged = errors == 6
         guessed = "_" not in guessed_letters
@@ -37,11 +34,13 @@ def play():
         display_defeat_message(secret_word)
 
 
-def display_opening_message():
+def display_round(errors, guessed_letters):
     print("""****************************
 Welcome to the Hangman game!
 ****************************
 """)
+    draw_gallows(errors)
+    print(" ".join(guessed_letters))
 
 
 def load_secret_word(filename="words.txt", first_valid_line=0):
