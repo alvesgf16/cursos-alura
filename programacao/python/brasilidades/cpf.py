@@ -9,8 +9,8 @@ class Cpf:
     def __str__(self):
         return self.format_cpf()
 
-    def is_cpf_valid(self, document):
-        if len(document) == 11:
+    def is_cpf_valid(self, cpf):
+        if len(cpf) == 11:
             return True
         else:
             return False
