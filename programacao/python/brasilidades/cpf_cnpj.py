@@ -17,7 +17,10 @@ class CpfCnpj:
             raise ValueError("Invalid document!")
 
     def __str__(self):
-        return self.format_cpf()
+        if self.document_type == "cpf":
+            return self.format_cpf()
+        elif self.document_type == "cnpj":
+            return self.format_cnpj()
 
     def is_cpf_valid(self, cpf):
         CPF_LENGTH = 11
@@ -33,3 +36,6 @@ class CpfCnpj:
 
     def format_cpf(self):
         return CPF().mask(self.cpf)
+
+    def format_cnpj(self):
+        return CNPJ().mask(self.cnpj)
