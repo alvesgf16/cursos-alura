@@ -1,3 +1,6 @@
+from validate_docbr import CPF
+
+
 class Cpf:
     def __init__(self, document):
         document = str(document)
@@ -11,9 +14,10 @@ class Cpf:
 
     def is_cpf_valid(self, cpf):
         if len(cpf) == 11:
-            return True
+            validator = CPF()
+            return validator.validate(cpf)
         else:
-            return False
+            raise ValueError("Invalid number of digits!")
 
     def format_cpf(self):
         slice_one = self.cpf[:3]
