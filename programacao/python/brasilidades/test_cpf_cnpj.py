@@ -15,3 +15,13 @@ def test_invalid_cpf_raises_an_exception():
 def test_cpf_with_length_other_than_11_raises_an_exception():
     with pytest.raises(ValueError, match="Invalid number of digits"):
         CpfCnpj(1561698791, "cpf")
+
+
+def test_invalid_cnpj_raises_an_exception():
+    with pytest.raises(ValueError, match="Invalid CNPJ!"):
+        CpfCnpj(15616987913301, "cnpj")
+
+
+def test_cnpj_with_length_other_than_14_raises_an_exception():
+    with pytest.raises(ValueError, match="Invalid number of digits"):
+        CpfCnpj(1561698791, "cnpj")
