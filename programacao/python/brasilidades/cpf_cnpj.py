@@ -1,7 +1,7 @@
 from validate_docbr import CPF
 
 
-class Cpf:
+class CpfCnpj:
     def __init__(self, document):
         document = str(document)
         if not self.is_cpf_valid(document):
