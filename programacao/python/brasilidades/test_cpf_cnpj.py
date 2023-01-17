@@ -14,4 +14,4 @@ def test_invalid_cpf_raises_an_exception():
 
 def test_cpf_with_length_other_than_11_raises_an_exception():
     with pytest.raises(ValueError, match="Invalid number of digits"):
-        CpfCnpj(1561698791)
+        CpfCnpj(1561698791, "cpf")

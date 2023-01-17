@@ -1,12 +1,14 @@
-from validate_docbr import CPF
+from validate_docbr import CPF, CNPJ
 
 
 class CpfCnpj:
-    def __init__(self, document):
+    def __init__(self, document, document_type):
         document = str(document)
-        if not self.is_cpf_valid(document):
-            raise ValueError("Invalid CPF!")
-        self.cpf = document
+        self.document_type = document_type
+        if self.document_type == "cpf":
+            if not self.is_cpf_valid(document):
+                raise ValueError("Invalid CPF!")
+            self.cpf = document
 
     def __str__(self):
         return self.format_cpf()
