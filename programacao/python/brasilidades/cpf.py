@@ -13,11 +13,11 @@ class Cpf:
         return self.format_cpf()
 
     def is_cpf_valid(self, cpf):
-        if len(cpf) == 11:
+        if len(cpf) != 11:
+            raise ValueError("Invalid number of digits!")
+        else:
             validator = CPF()
             return validator.validate(cpf)
-        else:
-            raise ValueError("Invalid number of digits!")
 
     def format_cpf(self):
         mask = CPF()
