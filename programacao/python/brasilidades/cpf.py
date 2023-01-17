@@ -20,8 +20,5 @@ class Cpf:
             raise ValueError("Invalid number of digits!")
 
     def format_cpf(self):
-        slice_one = self.cpf[:3]
-        slice_two = self.cpf[3:6]
-        slice_three = self.cpf[6:9]
-        slice_four = self.cpf[9:]
-        return f"{slice_one}.{slice_two}.{slice_three}-{slice_four}"
+        mask = CPF()
+        return mask.mask(self.cpf)
