@@ -13,6 +13,8 @@ class CpfCnpj:
             if not self.is_cnpj_valid(document):
                 raise ValueError("Invalid CNPJ!")
             self.cnpj = document
+        else:
+            raise ValueError("Invalid document!")
 
     def __str__(self):
         return self.format_cpf()

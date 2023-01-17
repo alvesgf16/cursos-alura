@@ -25,3 +25,8 @@ def test_invalid_cnpj_raises_an_exception():
 def test_cnpj_with_length_other_than_14_raises_an_exception():
     with pytest.raises(ValueError, match="Invalid number of digits"):
         CpfCnpj(1561698791, "cnpj")
+
+
+def test_passing_a_different_document_type_raises_an_exception():
+    with pytest.raises(ValueError, match="Invalid document!"):
+        CpfCnpj(000000000000, "invalid_type")
