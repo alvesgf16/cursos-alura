@@ -6,8 +6,7 @@ class Cpf:
         document = str(document)
         if not self.is_cpf_valid(document):
             raise ValueError("Invalid CPF!")
-        else:
-            self.cpf = document
+        self.cpf = document
 
     def __str__(self):
         return self.format_cpf()
@@ -15,9 +14,8 @@ class Cpf:
     def is_cpf_valid(self, cpf):
         if len(cpf) != 11:
             raise ValueError("Invalid number of digits!")
-        else:
-            validator = CPF()
-            return validator.validate(cpf)
+        validator = CPF()
+        return validator.validate(cpf)
 
     def format_cpf(self):
         mask = CPF()
