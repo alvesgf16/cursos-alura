@@ -4,7 +4,7 @@ import re
 class Telephone:
     def __init__(self, phone_number):
         self.pattern = "([0-9]{2,3})?([0-9]{2})([0-9]{4,5})([0-9]{4})"
-        if self.validate(phone_number):
+        if self.is_valid(phone_number):
             self.number = phone_number
         else:
             raise ValueError("Invalid number!")
@@ -12,7 +12,7 @@ class Telephone:
     def __str__(self):
         return self.format()
 
-    def validate(self, phone_number):
+    def is_valid(self, phone_number):
         return bool(re.findall(self.pattern, phone_number))
 
     def format(self):
