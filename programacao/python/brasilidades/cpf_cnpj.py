@@ -1,6 +1,10 @@
 from validate_docbr import CPF, CNPJ
 
 
+def create_document(document, document_type):
+    return CpfCnpj(document, document_type)
+
+
 class CpfCnpj:
     def __init__(self, document, document_type):
         document = str(document)
