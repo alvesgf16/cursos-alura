@@ -9,4 +9,6 @@ class AddressSearch:
         return f"{self.cep[:5]}-{self.cep[5:]}"
 
     def is_cep_valid(self, cep):
-        return len(cep) == 8
+        CEP_LENGTH = 8
+
+        return len(cep) == CEP_LENGTH
