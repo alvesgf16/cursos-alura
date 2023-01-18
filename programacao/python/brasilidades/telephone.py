@@ -10,8 +10,8 @@ class Telephone:
             raise ValueError("Invalid number!")
 
     def __str__(self):
-        country_code, area_code, prefix, line_number = self.number_parts
         result = ""
+        country_code, area_code, prefix, line_number = self.number_parts
         if country_code is not None:
             result += f"+{country_code} "
         result += f"({area_code}) {prefix}-{line_number}"
