@@ -5,6 +5,9 @@ class Date:
     def __init__(self):
         self.registration_time = datetime.now()
 
+    def __str__(self):
+        return self.format()
+
     @property
     def registration_month(self):
         months_of_the_year = [
@@ -37,3 +40,6 @@ class Date:
         ]
         day_of_the_week = self.registration_time.weekday()
         return days_of_the_week[day_of_the_week]
+
+    def format(self):
+        return self.registration_time.strftime("%d/%m/%Y %H:%M")
