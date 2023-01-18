@@ -10,9 +10,8 @@ class Telephone:
             raise ValueError("Invalid number!")
 
     def __str__(self):
-        area_code, prefix, line_number = self.number_parts[1:]
         result = self.start_with_country_code_if_exists()
-        result += f"({area_code}) {prefix}-{line_number}"
+        result += self.format()
         return result
 
     @property
@@ -25,3 +24,7 @@ class Telephone:
     def start_with_country_code_if_exists(self):
         country_code = self.number_parts[0]
         return f"+{country_code} " if country_code is not None else ""
+
+    def format(self):
+        area_code, prefix, line_number = self.number_parts[1:]
+        return f"({area_code}) {prefix}-{line_number}"
