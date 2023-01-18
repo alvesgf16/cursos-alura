@@ -4,7 +4,7 @@ from taxpayer_identification import create_taxpayer_identification
 
 def test_valid_cpf_is_displayed_with_formatting():
     cpf = create_taxpayer_identification("01234567890")
-    assert str(cpf) == "012.345.678-90"
+    assert "012.345.678-90" == str(cpf)
 
 
 def test_invalid_cpf_raises_an_exception():
@@ -14,7 +14,7 @@ def test_invalid_cpf_raises_an_exception():
 
 def test_valid_cnpj_is_displayed_with_formatting():
     cnpj = create_taxpayer_identification("05854667000175")
-    assert str(cnpj) == "05.854.667/0001-75"
+    assert "05.854.667/0001-75" == str(cnpj)
 
 
 def test_invalid_cnpj_raises_an_exception():
