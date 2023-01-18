@@ -10,7 +10,7 @@ class Date:
 
     @property
     def registration_month(self):
-        months_of_the_year = [
+        MONTHS_OF_THE_YEAR = (
             "January",
             "February",
             "March",
@@ -23,13 +23,13 @@ class Date:
             "October",
             "November",
             "December",
-        ]
+        )
         registration_month = self.time_of_registration.month - 1
-        return months_of_the_year[registration_month]
+        return MONTHS_OF_THE_YEAR[registration_month]
 
     @property
     def day_of_the_week(self):
-        days_of_the_week = [
+        DAYS_OF_THE_WEEK = (
             "Monday",
             "Tuesday",
             "Wednesday",
@@ -37,9 +37,9 @@ class Date:
             "Friday",
             "Saturday",
             "Sunday",
-        ]
+        )
         day_of_the_week = self.time_of_registration.weekday()
-        return days_of_the_week[day_of_the_week]
+        return DAYS_OF_THE_WEEK[day_of_the_week]
 
     def time_registered(self):
         return datetime.now() - self.time_of_registration
