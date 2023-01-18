@@ -24,3 +24,16 @@ class Date:
         registration_month = self.registration_time.month - 1
         return months_of_the_year[registration_month]
 
+    @property
+    def day_of_the_week(self):
+        days_of_the_week = [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+        ]
+        day_of_the_week = self.registration_time.weekday()
+        return days_of_the_week[day_of_the_week]
