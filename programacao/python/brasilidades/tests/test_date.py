@@ -1,4 +1,5 @@
 from freezegun import freeze_time
+from datetime import timedelta
 from date import Date
 
 
@@ -16,3 +17,9 @@ def test_month_is_displayed_in_full():
 @freeze_time("1994-12-07")
 def test_day_of_the_week_is_displayed_in_full():
     assert Date().day_of_the_week == "Wednesday"
+
+
+@freeze_time("1996-07-04 11:00:00", auto_tick_seconds=604800)
+def test_time_registration_returns_how_long_a_user_has_been_registered():
+    date = Date()
+    assert date.time_registered() == timedelta(weeks=1)

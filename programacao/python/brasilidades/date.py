@@ -43,3 +43,6 @@ class Date:
 
     def format(self):
         return self.time_of_registration.strftime("%d/%m/%Y %H:%M")
+
+    def time_registered(self):
+        return datetime.now() - self.time_of_registration
