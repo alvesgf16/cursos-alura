@@ -10,11 +10,8 @@ class Telephone:
             raise ValueError("Invalid number!")
 
     def __str__(self):
-        result = ""
         area_code, prefix, line_number = self.number_parts[1:]
-        country_code = self.number_parts[0]
-        if country_code is not None:
-            result += f"+{country_code} "
+        result = self.start_with_country_code_if_exists()
         result += f"({area_code}) {prefix}-{line_number}"
         return result
 
@@ -24,3 +21,7 @@ class Telephone:
 
     def is_valid(self, phone_number):
         return bool(re.findall(self.pattern, phone_number))
+
+    def start_with_country_code_if_exists(self):
+        country_code = self.number_parts[0]
+        return f"+{country_code} " if country_code is not None else ""
