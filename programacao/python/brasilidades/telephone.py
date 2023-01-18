@@ -21,4 +21,8 @@ class Telephone:
 
     def format(self):
         country_code, area_code, prefix, line_number = self.number_parts
-        return f"+{country_code} ({area_code}) {prefix}-{line_number}"
+        result = ""
+        if country_code is not None:
+            result += f"+{country_code} "
+        result += f"({area_code}) {prefix}-{line_number}"
+        return result
