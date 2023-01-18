@@ -13,8 +13,7 @@ class Telephone:
         return self.format()
 
     def validate(self, phone_number):
-        result = re.findall(self.pattern, phone_number)
-        return bool(result)
+        return bool(re.findall(self.pattern, phone_number))
 
     def format(self):
         result = re.search(self.pattern, self.number)
