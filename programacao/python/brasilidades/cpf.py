@@ -2,16 +2,16 @@ from validate_docbr import CPF
 
 
 class Cpf:
-    def __init__(self, document):
-        if not self.is_valid(document):
+    def __init__(self, id_number):
+        if not self.is_valid(id_number):
             raise ValueError("Invalid CPF!")
-        self.cpf = document
+        self.id_number = id_number
 
     def __str__(self):
         return self.format()
 
-    def is_valid(self, cpf):
-        return CPF().validate(cpf)
+    def is_valid(self, id_number):
+        return CPF().validate(id_number)
 
     def format(self):
-        return CPF().mask(self.cpf)
+        return CPF().mask(self.id_number)
