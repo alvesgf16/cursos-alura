@@ -5,5 +5,8 @@ class AddressSearch:
             raise ValueError("Invalid CEP!")
         self.cep = cep
 
+    def __str__(self):
+        return f"{self.cep[:5]}-{self.cep[5:]}"
+
     def is_cep_valid(self, cep):
         return len(cep) == 8
