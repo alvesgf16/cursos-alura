@@ -16,5 +16,6 @@ class Telephone:
         return bool(re.findall(self.pattern, phone_number))
 
     def format(self):
-        result = re.search(self.pattern, self.number)
-        return f"+{result[1]} ({result[2]}) {result[3]}-{result[4]}"
+        phone_number_parts = re.search(self.pattern, self.number).groups()
+        country_code, area_code, prefix, line_number = phone_number_parts
+        return f"+{country_code} ({area_code}) {prefix}-{line_number}"
