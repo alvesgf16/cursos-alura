@@ -17,9 +17,4 @@ class Telephone:
 
     def format(self):
         result = re.search(self.pattern, self.number)
-        return "+{} ({}) {}-{}".format(
-            result.group(1),
-            result.group(2),
-            result.group(3),
-            result.group(4)
-        )
+        return f"+{result[1]} ({result[2]}) {result[3]}-{result[4]}"
