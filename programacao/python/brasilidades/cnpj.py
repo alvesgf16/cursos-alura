@@ -8,10 +8,7 @@ class Cnpj:
         self.id_number = id_number
 
     def __str__(self):
-        return self.format()
+        return CNPJ().mask(self.id_number)
 
     def is_valid(self, id_number):
         return CNPJ().validate(id_number)
-
-    def format(self):
-        return CNPJ().mask(self.id_number)

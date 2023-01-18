@@ -10,7 +10,12 @@ class Telephone:
             raise ValueError("Invalid number!")
 
     def __str__(self):
-        return self.format()
+        country_code, area_code, prefix, line_number = self.number_parts
+        result = ""
+        if country_code is not None:
+            result += f"+{country_code} "
+        result += f"({area_code}) {prefix}-{line_number}"
+        return result
 
     @property
     def number_parts(self):
@@ -18,11 +23,3 @@ class Telephone:
 
     def is_valid(self, phone_number):
         return bool(re.findall(self.pattern, phone_number))
-
-    def format(self):
-        country_code, area_code, prefix, line_number = self.number_parts
-        result = ""
-        if country_code is not None:
-            result += f"+{country_code} "
-        result += f"({area_code}) {prefix}-{line_number}"
-        return result

@@ -8,10 +8,7 @@ class Cpf:
         self.id_number = id_number
 
     def __str__(self):
-        return self.format()
+        return CPF().mask(self.id_number)
 
     def is_valid(self, id_number):
         return CPF().validate(id_number)
-
-    def format(self):
-        return CPF().mask(self.id_number)
