@@ -11,9 +11,6 @@ class Cnpj:
         return self.format()
 
     def is_valid(self, cnpj):
-        CNPJ_LENGTH = 14
-        if len(cnpj) != CNPJ_LENGTH:
-            raise ValueError("Invalid number of digits!")
         return CNPJ().validate(cnpj)
 
     def format(self):
