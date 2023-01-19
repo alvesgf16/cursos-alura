@@ -11,18 +11,19 @@ class AddressSearch:
     def __str__(self):
         return f"{self.cep[:5]}-{self.cep[5:]}"
 
-    def is_cep_valid(self, cep):
-        CEP_LENGTH = 8
-
-        return len(cep) == CEP_LENGTH
-
-    def access_via_cep(self):
+    @property
+    def zone_info(self):
         address_data = self.retrieve_address_data_from_cep()
         return (
             address_data["bairro"],
             address_data["localidade"],
             address_data["uf"],
         )
+
+    def is_cep_valid(self, cep):
+        CEP_LENGTH = 8
+
+        return len(cep) == CEP_LENGTH
 
     def retrieve_address_data_from_cep(self):
         url = f"https://viacep.com.br/ws/{self.cep}/json"

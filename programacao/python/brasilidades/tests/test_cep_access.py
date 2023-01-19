@@ -18,11 +18,11 @@ def test_valid_cep_is_displayed_with_formatting():
 def test_it_is_possible_to_use_a_cep_to_retrieve_address_info():
     cep = AddressSearch("49020050")
     with patch("requests.get", side_effect=mock_requests_get):
-        assert ("Treze de Julho", "Aracaju", "SE") == cep.access_via_cep()
+        assert ("Treze de Julho", "Aracaju", "SE") == cep.zone_info
 
 
 def test_a_non_existent_cep_raises_an_exception():
     cep = AddressSearch("99999999")
     with patch("requests.get", side_effect=mock_requests_get):
         with pytest.raises(HTTPError, match="CEP not found!"):
-            cep.access_via_cep()
+            cep.zone_info
