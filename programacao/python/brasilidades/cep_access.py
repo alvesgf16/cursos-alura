@@ -20,4 +20,6 @@ class AddressSearch:
         url = f"https://viacep.com.br/ws/{self.cep}/json"
         response = requests.get(url)
         data = response.json()
+        if "erro" in data:
+            raise requests.exceptions.HTTPError("CEP not found!")
         return (data["bairro"], data["localidade"], data["uf"])
