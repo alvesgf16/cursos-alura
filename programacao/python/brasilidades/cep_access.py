@@ -17,9 +17,16 @@ class AddressSearch:
         return len(cep) == CEP_LENGTH
 
     def access_via_cep(self):
+        address_data = self.retrieve_address_data_from_cep()
+        return (
+            address_data["bairro"],
+            address_data["localidade"],
+            address_data["uf"],
+        )
+
+    def retrieve_address_data_from_cep(self):
         url = f"https://viacep.com.br/ws/{self.cep}/json"
-        response = requests.get(url)
-        data = response.json()
-        if "erro" in data:
+        address_data = requests.get(url).json()
+        if "erro" in address_data:
             raise requests.exceptions.HTTPError("CEP not found!")
-        return (data["bairro"], data["localidade"], data["uf"])
+        return address_data
