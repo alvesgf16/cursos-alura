@@ -1,7 +1,7 @@
 import requests
 
 
-class AddressSearch:
+class Address:
     def __init__(self, cep):
         cep = str(cep)
         if not self.is_cep_valid(cep):
