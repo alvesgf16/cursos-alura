@@ -27,6 +27,11 @@ class Employee:
         return split_name[-1]
 
     def decrease_salary(self):
+        if self._is_partner():
+            decrease = self._salary * 0.1
+            self._salary -= decrease
+
+    def _is_partner(self):
         last_names = [
             "Bragança",
             "Windsor",
@@ -37,9 +42,7 @@ class Employee:
             "Tudor",
             "Ptolomeu",
         ]
-        if (self._salary >= 100000) and (self.last_name() in last_names):
-            decrease = self._salary * 0.1
-            self._salary -= decrease
+        return self._salary >= 100000 and self.last_name() in last_names
 
     def calcularte_bonus(self):
         value = self._salary * 0.1
