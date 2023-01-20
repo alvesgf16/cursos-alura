@@ -26,6 +26,21 @@ class Employee:
         split_name = full_name.split(" ")
         return split_name[-1]
 
+    def decrease_salary(self):
+        last_names = [
+            "Bragança",
+            "Windsor",
+            "Bourbon",
+            "Yamata",
+            "Al Saud",
+            "Khan",
+            "Tudor",
+            "Ptolomeu",
+        ]
+        if (self._salary >= 100000) and (self.last_name() in last_names):
+            decrease = self._salary * 0.1
+            self._salary -= decrease
+
     def calcularte_bonus(self):
         value = self._salary * 0.1
         if value > 1000:
