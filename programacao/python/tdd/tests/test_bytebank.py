@@ -42,3 +42,16 @@ class TestClass:
 
         # Then / Assert
         assert result == expected
+
+    def test_when_calculate_bonus_receives_1000_must_return_100(self):
+        # Given / Arrange
+        input_salary = 1000
+        expected = 100
+
+        test_employee = Employee("Test", "11/11/2000", input_salary)
+
+        # When / Act
+        result = test_employee.calculate_bonus()
+
+        # Then / Assert
+        assert result == expected
