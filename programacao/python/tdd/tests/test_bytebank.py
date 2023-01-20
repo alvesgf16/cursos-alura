@@ -1,4 +1,5 @@
 import pytest
+from pytest import mark
 from src.bytebank import Employee
 
 
@@ -44,6 +45,7 @@ class TestClass:
         # Then / Assert
         assert result == expected
 
+    @mark.calculate_bonus
     def test_when_calculate_bonus_receives_1000_must_return_100(self):
         # Given / Arrange
         input_salary = 1000
@@ -57,6 +59,7 @@ class TestClass:
         # Then / Assert
         assert result == expected
 
+    @mark.calculate_bonus
     def test_when_calculate_bonus_receives_10000000_must_raise_exception(self):
         with pytest.raises(ValueError):
             # Given / Arrange
