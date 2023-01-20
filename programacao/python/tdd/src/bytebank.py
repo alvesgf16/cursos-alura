@@ -47,7 +47,7 @@ class Employee:
     def calculate_bonus(self):
         value = self._salary * 0.1
         if value > 1000:
-            value = 0
+            raise ValueError(" The salary is too high to receive a bonus")
         return value
 
     def __str__(self):
