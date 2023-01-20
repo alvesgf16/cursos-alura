@@ -44,7 +44,7 @@ class Employee:
         ]
         return self._salary >= 100000 and self.last_name() in last_names
 
-    def calcularte_bonus(self):
+    def calculate_bonus(self):
         value = self._salary * 0.1
         if value > 1000:
             value = 0
