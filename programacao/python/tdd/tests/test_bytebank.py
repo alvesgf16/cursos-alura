@@ -14,3 +14,16 @@ class TestClass:
 
         # Then / Assert
         assert result == expected
+
+    def test_when_last_name_receives_Lucas_Carvalho_must_return_Carvalho(self):
+        # Given / Arrange
+        input_name = " Lucas Carvalho "
+        expected = "Carvalho"
+
+        lucas = Employee(input_name, "11/11/2000", 1111)
+
+        # When / Act
+        result = lucas.last_name()
+
+        # Then / Assert
+        assert result == expected
