@@ -21,6 +21,11 @@ class Employee:
         current_year = date.today().year
         return current_year - int(birth_year)
 
+    def last_name(self):
+        full_name = self.name.strip()
+        split_name = full_name.split(" ")
+        return split_name[-1]
+
     def calcularte_bonus(self):
         value = self._salary * 0.1
         if value > 1000:
