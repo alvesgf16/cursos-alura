@@ -1,3 +1,4 @@
+import pytest
 from src.bytebank import Employee
 
 
@@ -55,3 +56,16 @@ class TestClass:
 
         # Then / Assert
         assert result == expected
+
+    def test_when_calculate_bonus_receives_10000000_must_raise_exception(self):
+        with pytest.raises(ValueError):
+            # Given / Arrange
+            input_salary = 10000000
+
+            test_employee = Employee("Test", "11/11/2000", input_salary)
+
+            # When / Act
+            result = test_employee.calculate_bonus()
+
+            # Then / Assert
+            assert result
