@@ -31,6 +31,9 @@ class TestCurrentAccount(unittest.TestCase):
         self.number = "00001"
         self.account = CurrentAccount(self.customer, self.agency, self.number)
 
+    def tearDown(self):
+        CurrentAccount.total_accounts_created = 0
+
     def test_new_current_account_has_a_customer_agency_and_number(self):
         assert self.account.customer == self.customer
         assert self.account.agency == self.agency
