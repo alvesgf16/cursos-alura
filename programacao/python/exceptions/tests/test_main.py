@@ -11,9 +11,6 @@ class TestMain(unittest.TestCase):
         self.cpf = "123.456.789-01"
         self.occupation = "student"
         self.customer = Customer(self.name, self.cpf, self.occupation)
-        self.agency = "1"
-        self.number = "00001"
-        self.account = CurrentAccount(self.customer, self.agency, self.number)
 
     def test_new_customer_has_a_name_cpf_and_occupation(self):
         assert self.customer.name == self.name
@@ -25,6 +22,14 @@ class TestMain(unittest.TestCase):
         age = 18
 
         assert self.customer.age == age
+
+class TestCurrentAccount(unittest.TestCase):
+    def setUp(self):
+        name, cpf, occupation = "a name", "123.456.789-01", "student"
+        self.customer = Customer(name, cpf, occupation)
+        self.agency = "1"
+        self.number = "00001"
+        self.account = CurrentAccount(self.customer, self.agency, self.number)
 
     def test_new_current_account_has_a_customer_agency_and_number(self):
         assert self.account.customer == self.customer
