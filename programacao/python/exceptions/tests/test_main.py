@@ -5,7 +5,7 @@ import pytest
 from main import Customer, CurrentAccount
 
 
-class TestMain(unittest.TestCase):
+class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.name = "a name"
         self.cpf = "123.456.789-01"
