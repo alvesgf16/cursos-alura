@@ -46,10 +46,7 @@ class TestCurrentAccount(unittest.TestCase):
     def test_adding_an_account_increases_the_total_accounts_created(self):
         assert CurrentAccount.total_accounts_created == 1
 
-        name, cpf, occupation = "other name", "183.297.197-07", "developer"
-        new_customer = Customer(name, cpf, occupation)
-        new_number = "00002"
-        CurrentAccount(new_customer, self.agency, new_number)
+        self.given_a_second_account()
 
         assert CurrentAccount.total_accounts_created == 2
 
@@ -71,11 +68,7 @@ class TestCurrentAccount(unittest.TestCase):
 
     def test_transfer_decreases_a_balance_and_increases_another(self):
         transfer_amount = 10
-        name, cpf, occupation = "other name", "183.297.197-07", "developer"
-        new_customer = Customer(name, cpf, occupation)
-        new_number = "00002"
-        destination_account = CurrentAccount(new_customer, self.agency,
-                                             new_number)
+        destination_account = self.given_a_second_account()
         origin_balance_after_transfer = 90
         destination_balance_after_transfer = 110
 
@@ -83,3 +76,9 @@ class TestCurrentAccount(unittest.TestCase):
 
         assert self.account.balance == origin_balance_after_transfer
         assert destination_account.balance == destination_balance_after_transfer
+
+    def given_a_second_account(self):
+        name, cpf, occupation = "other name", "183.297.197-07", "developer"
+        new_customer = Customer(name, cpf, occupation)
+        new_number = "00002"
+        return CurrentAccount(new_customer, self.agency, new_number)
