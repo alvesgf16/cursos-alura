@@ -18,11 +18,14 @@ class Customer:
 
 
 class CurrentAccount:
+    total_accounts_created = 0
+
     def __init__(self, customer, agency, number):
         self.__balance = 100
         self.__customer = customer
         self.__agency = agency
         self.__number = number
+        CurrentAccount.total_accounts_created += 1
     
     @property
     def balance(self):

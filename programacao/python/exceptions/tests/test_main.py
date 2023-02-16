@@ -40,3 +40,11 @@ class TestMain(unittest.TestCase):
         account = CurrentAccount(self.customer, agency, number)
 
         assert account.balance == 100
+
+    def test_adding_an_account_increases_the_total_accounts_created(self):
+        agency = "1"
+        number = "00001"
+
+        CurrentAccount(self.customer, agency, number)
+
+        assert CurrentAccount.total_accounts_created == 1
