@@ -1,8 +1,8 @@
 class Customer:
-    def __init__(self, name, cpf, occupation):
-        self.__name = name
-        self.__cpf = cpf
-        self.__occupation = occupation
+    def __init__(self, a_name, a_cpf, an_occupation):
+        self.__name = a_name
+        self.__cpf = a_cpf
+        self.__occupation = an_occupation
 
     @property
     def name(self):
@@ -20,11 +20,11 @@ class Customer:
 class CurrentAccount:
     total_accounts_created = 0
 
-    def __init__(self, customer, agency, number):
+    def __init__(self, a_customer, an_agency, a_number):
         self.__balance = 100
-        self.__customer = customer
-        self.__agency = agency
-        self.__number = number
+        self.__customer = a_customer
+        self.__agency = an_agency
+        self.__number = a_number
         CurrentAccount.total_accounts_created += 1
     
     @property
