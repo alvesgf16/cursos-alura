@@ -1,13 +1,36 @@
 class Customer:
     def __init__(self, name, cpf, occupation):
-        self.name = name
-        self.cpf = cpf
-        self.occupation = occupation
+        self.__name = name
+        self.__cpf = cpf
+        self.__occupation = occupation
+
+    @property
+    def name(self):
+        return self.__name
+    
+    @property
+    def cpf(self):
+        return self.__cpf
+    
+    @property
+    def occupation(self):
+        return self.__occupation
 
 
 class CurrentAccount:
     def __init__(self, customer, agency, number):
-        self.customer = customer
-        self.agency = agency
-        self.number = number
+        self.__customer = customer
+        self.__agency = agency
+        self.__number = number
         
+    @property
+    def customer(self):
+        return self.__customer
+
+    @property
+    def agency(self):
+        return self.__agency
+
+    @property
+    def number(self):
+        return self.__number    
