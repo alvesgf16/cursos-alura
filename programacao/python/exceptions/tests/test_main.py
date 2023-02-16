@@ -41,3 +41,10 @@ class TestCurrentAccount(unittest.TestCase):
 
     def test_adding_an_account_increases_the_total_accounts_created(self):
         assert CurrentAccount.total_accounts_created == 1
+
+        name, cpf, occupation = "other name", "183.297.197-07", "developer"
+        new_customer = Customer(name, cpf, occupation)
+        new_number = "00002"
+        CurrentAccount(new_customer, self.agency, new_number)
+
+        assert CurrentAccount.total_accounts_created == 2
