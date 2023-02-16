@@ -51,3 +51,11 @@ class TestCurrentAccount(unittest.TestCase):
         CurrentAccount(new_customer, self.agency, new_number)
 
         assert CurrentAccount.total_accounts_created == 2
+
+    def test_withdraw_decreases_balance(self):
+        withdrawal_amount = 10
+        balance_after_withdrawal = 90
+
+        self.account.withdraw(withdrawal_amount)
+
+        assert self.account.balance == balance_after_withdrawal

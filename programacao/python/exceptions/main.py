@@ -7,11 +7,11 @@ class Customer:
     @property
     def name(self):
         return self.__name
-    
+
     @property
     def cpf(self):
         return self.__cpf
-    
+
     @property
     def occupation(self):
         return self.__occupation
@@ -26,7 +26,7 @@ class CurrentAccount:
         self.__agency = an_agency
         self.__number = a_number
         CurrentAccount.total_accounts_created += 1
-    
+
     @property
     def balance(self):
         return self.__balance
@@ -41,4 +41,7 @@ class CurrentAccount:
 
     @property
     def number(self):
-        return self.__number    
+        return self.__number
+    
+    def withdraw(self, an_amount):
+        self.__balance -= an_amount
