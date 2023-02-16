@@ -1,4 +1,4 @@
-from main import Customer
+from main import Customer, CurrentAccount
 import pytest
 
 
@@ -24,3 +24,7 @@ def test_customer_has_an_age():
     customer = Customer(name, cpf, occupation)
 
     assert customer.age == age
+
+
+def test_current_account_class_exists():
+    CurrentAccount()
