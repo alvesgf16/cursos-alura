@@ -43,6 +43,10 @@ class CurrentAccount:
     def number(self):
         return self.__number
     
+    def transfer(self, an_amount, an_account):
+        self.withdraw(an_amount)
+        an_account.deposit(an_amount)
+    
     def withdraw(self, an_amount):
         self.__balance -= an_amount
 

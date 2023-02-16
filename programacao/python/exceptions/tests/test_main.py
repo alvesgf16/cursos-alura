@@ -23,6 +23,7 @@ class TestCustomer(unittest.TestCase):
 
         assert self.customer.age == age
 
+
 class TestCurrentAccount(unittest.TestCase):
     def setUp(self):
         name, cpf, occupation = "a name", "123.456.789-01", "student"
@@ -67,3 +68,18 @@ class TestCurrentAccount(unittest.TestCase):
         self.account.deposit(deposit_amount)
 
         assert self.account.balance == balance_after_deposit
+
+    def test_transfer_decreases_a_balance_and_increases_another(self):
+        transfer_amount = 10
+        name, cpf, occupation = "other name", "183.297.197-07", "developer"
+        new_customer = Customer(name, cpf, occupation)
+        new_number = "00002"
+        destination_account = CurrentAccount(new_customer, self.agency,
+                                             new_number)
+        origin_balance_after_transfer = 90
+        destination_balance_after_transfer = 110
+
+        self.account.transfer(transfer_amount, destination_account)
+
+        assert self.account.balance == origin_balance_after_transfer
+        assert destination_account.balance == destination_balance_after_transfer
