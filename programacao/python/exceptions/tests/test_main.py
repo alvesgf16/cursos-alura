@@ -59,3 +59,11 @@ class TestCurrentAccount(unittest.TestCase):
         self.account.withdraw(withdrawal_amount)
 
         assert self.account.balance == balance_after_withdrawal
+
+    def test_deposit_increases_balance(self):
+        deposit_amount = 10
+        balance_after_deposit = 110
+
+        self.account.deposit(deposit_amount)
+
+        assert self.account.balance == balance_after_deposit

@@ -45,3 +45,6 @@ class CurrentAccount:
     
     def withdraw(self, an_amount):
         self.__balance -= an_amount
+
+    def deposit(self, an_amount):
+        self.__balance += an_amount
