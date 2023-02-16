@@ -26,5 +26,17 @@ def test_customer_has_an_age():
     assert customer.age == age
 
 
-def test_current_account_class_exists():
-    CurrentAccount()
+def test_current_account_has_a_customer_agency_and_number():
+    name = "a name"
+    cpf = "123.456.789-01"
+    occupation = "student"
+    agency = "1"
+    number = "00001"
+
+    customer = Customer(name, cpf, occupation)
+
+    account = CurrentAccount(customer, agency, number)
+
+    assert account.customer == customer
+    assert account.agency == agency
+    assert account.number == number

@@ -6,4 +6,8 @@ class Customer:
 
 
 class CurrentAccount:
-    pass
+    def __init__(self, customer, agency, number):
+        self.customer = customer
+        self.agency = agency
+        self.number = number
+        
