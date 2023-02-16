@@ -19,10 +19,15 @@ class Customer:
 
 class CurrentAccount:
     def __init__(self, customer, agency, number):
+        self.__balance = 100
         self.__customer = customer
         self.__agency = agency
         self.__number = number
-        
+    
+    @property
+    def balance(self):
+        return self.__balance
+
     @property
     def customer(self):
         return self.__customer
