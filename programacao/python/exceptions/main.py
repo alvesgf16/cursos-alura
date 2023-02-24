@@ -38,6 +38,11 @@ class CurrentAccount:
     def balance(self):
         return self.__balance
 
+    @balance.setter
+    def balance(self, a_balance):
+        self.__validate_value_is_a_positive_integer(a_balance)
+        self.__balance = a_balance
+
     @property
     def customer(self):
         return self.__customer
@@ -69,7 +74,7 @@ class CurrentAccount:
         an_account.deposit(an_amount)
 
     def withdraw(self, an_amount):
-        self.__balance -= an_amount
+        self.balance -= an_amount
 
     def deposit(self, an_amount):
-        self.__balance += an_amount
+        self.balance += an_amount
