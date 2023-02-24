@@ -55,6 +55,10 @@ class CurrentAccount:
         self.__validate_value_is_a_positive_integer(an_agency)
         self.__agency = an_agency
 
+    @property
+    def number(self):
+        return self.__number
+
     def __set_number(self, a_number):
         self.__validate_value_is_a_positive_integer(a_number)
         self.__number = a_number
@@ -64,10 +68,6 @@ class CurrentAccount:
             raise ValueError("Attribute must be an integer")
         if a_value <= 0:
             raise ValueError("Attribute must be greater than zero")
-
-    @property
-    def number(self):
-        return self.__number
 
     def transfer(self, an_amount, an_account):
         self.withdraw(an_amount)
