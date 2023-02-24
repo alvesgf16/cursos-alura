@@ -75,7 +75,9 @@ class TestCurrentAccount(unittest.TestCase):
         self.account.transfer(transfer_amount, destination_account)
 
         assert self.account.balance == origin_balance_after_transfer
-        assert destination_account.balance == destination_balance_after_transfer
+        assert (
+            destination_account.balance == destination_balance_after_transfer
+        )
 
     def test_adding_an_account_decreases_the_operation_fee(self):
         assert CurrentAccount.operation_fee == 30
@@ -83,7 +85,7 @@ class TestCurrentAccount(unittest.TestCase):
         self.given_a_second_account()
 
         assert CurrentAccount.operation_fee == 15
-        
+
     def given_a_second_account(self):
         name, cpf, occupation = "other name", "183.297.197-07", "developer"
         new_customer = Customer(name, cpf, occupation)
