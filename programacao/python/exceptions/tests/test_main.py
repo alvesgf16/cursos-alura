@@ -103,6 +103,13 @@ class TestCurrentAccount(unittest.TestCase):
             number_str = "00001"
             CurrentAccount(self.customer, self.agency, number_str)
 
+    def test_number_is_positive(self):
+        with pytest.raises(
+            ValueError, match="Attribute must be greater than zero"
+        ):
+            number_non_positive = 0
+            CurrentAccount(self.customer, self.agency, number_non_positive)
+
     def given_a_second_account(self):
         name, cpf, occupation = "other name", "183.297.197-07", "developer"
         new_customer = Customer(name, cpf, occupation)

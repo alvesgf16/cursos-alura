@@ -57,6 +57,8 @@ class CurrentAccount:
     def __set_number(self, a_number):
         if not isinstance(a_number, int):
             raise ValueError("Attribute must be an integer")
+        if a_number <= 0:
+            raise ValueError("Attribute must be greater than zero")
 
         self.__number = a_number
 
