@@ -47,20 +47,18 @@ class CurrentAccount:
         return self.__agency
 
     def __set_agency(self, an_agency):
-        if not isinstance(an_agency, int):
-            raise ValueError("Attribute must be an integer")
-        if an_agency <= 0:
-            raise ValueError("Attribute must be greater than zero")
-
+        self.__validate_value_is_a_positive_integer(an_agency)
         self.__agency = an_agency
 
     def __set_number(self, a_number):
-        if not isinstance(a_number, int):
-            raise ValueError("Attribute must be an integer")
-        if a_number <= 0:
-            raise ValueError("Attribute must be greater than zero")
-
+        self.__validate_value_is_a_positive_integer(a_number)
         self.__number = a_number
+
+    def __validate_value_is_a_positive_integer(self, a_value):
+        if not isinstance(a_value, int):
+            raise ValueError("Attribute must be an integer")
+        if a_value <= 0:
+            raise ValueError("Attribute must be greater than zero")
 
     @property
     def number(self):
