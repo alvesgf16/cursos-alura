@@ -23,8 +23,10 @@ class CurrentAccount:
 
     def __init__(self, a_customer, an_agency, a_number):
         self.__balance = 100
+        self.__agency = 0
+
         self.__customer = a_customer
-        self.__agency = an_agency
+        self.__set__agency(an_agency)
         self.__number = a_number
         CurrentAccount.total_accounts_created += 1
         CurrentAccount.operation_fee = (
@@ -42,6 +44,12 @@ class CurrentAccount:
     @property
     def agency(self):
         return self.__agency
+
+    def __set__agency(self, an_agency):
+        if not isinstance(an_agency, int):
+            raise ValueError("Attribute must be an integer")
+
+        self.__agency = an_agency
 
     @property
     def number(self):

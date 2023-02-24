@@ -28,7 +28,7 @@ class TestCurrentAccount(unittest.TestCase):
     def setUp(self):
         name, cpf, occupation = "a name", "123.456.789-01", "student"
         self.customer = Customer(name, cpf, occupation)
-        self.agency = "1"
+        self.agency = 1
         self.number = "00001"
         self.account = CurrentAccount(self.customer, self.agency, self.number)
 
@@ -85,6 +85,11 @@ class TestCurrentAccount(unittest.TestCase):
         self.given_a_second_account()
 
         assert CurrentAccount.operation_fee == 15
+
+    def test_agency_is_an_integer(self):
+        with pytest.raises(ValueError, match="Attribute must be an integer"):
+            agency_str = "1"
+            CurrentAccount(self.customer, agency_str, self.number)
 
     def given_a_second_account(self):
         name, cpf, occupation = "other name", "183.297.197-07", "developer"
