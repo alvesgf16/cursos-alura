@@ -24,10 +24,11 @@ class CurrentAccount:
     def __init__(self, a_customer, an_agency, a_number):
         self.__balance = 100
         self.__agency = 0
+        self.__number = 0
 
         self.__customer = a_customer
         self.__set__agency(an_agency)
-        self.__number = a_number
+        self.__set_number(a_number)
         CurrentAccount.total_accounts_created += 1
         CurrentAccount.operation_fee = (
             30 / CurrentAccount.total_accounts_created
@@ -52,6 +53,12 @@ class CurrentAccount:
             raise ValueError("Attribute must be greater than zero")
 
         self.__agency = an_agency
+
+    def __set_number(self, a_number):
+        if not isinstance(a_number, int):
+            raise ValueError("Attribute must be an integer")
+
+        self.__number = a_number
 
     @property
     def number(self):

@@ -29,7 +29,7 @@ class TestCurrentAccount(unittest.TestCase):
         name, cpf, occupation = "a name", "123.456.789-01", "student"
         self.customer = Customer(name, cpf, occupation)
         self.agency = 1
-        self.number = "00001"
+        self.number = 1
         self.account = CurrentAccount(self.customer, self.agency, self.number)
 
     def tearDown(self):
@@ -98,8 +98,13 @@ class TestCurrentAccount(unittest.TestCase):
             agency_non_positive = 0
             CurrentAccount(self.customer, agency_non_positive, self.number)
 
+    def test_number_is_an_integer(self):
+        with pytest.raises(ValueError, match="Attribute must be an integer"):
+            number_str = "00001"
+            CurrentAccount(self.customer, self.agency, number_str)
+
     def given_a_second_account(self):
         name, cpf, occupation = "other name", "183.297.197-07", "developer"
         new_customer = Customer(name, cpf, occupation)
-        new_number = "00002"
+        new_number = 2
         return CurrentAccount(new_customer, self.agency, new_number)
