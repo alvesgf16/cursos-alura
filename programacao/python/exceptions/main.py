@@ -19,6 +19,7 @@ class Customer:
 
 class CurrentAccount:
     total_accounts_created = 0
+    operation_fee = None
 
     def __init__(self, a_customer, an_agency, a_number):
         self.__balance = 100
@@ -26,6 +27,9 @@ class CurrentAccount:
         self.__agency = an_agency
         self.__number = a_number
         CurrentAccount.total_accounts_created += 1
+        CurrentAccount.operation_fee = (
+            30 / CurrentAccount.total_accounts_created
+        )
 
     @property
     def balance(self):
@@ -42,11 +46,11 @@ class CurrentAccount:
     @property
     def number(self):
         return self.__number
-    
+
     def transfer(self, an_amount, an_account):
         self.withdraw(an_amount)
         an_account.deposit(an_amount)
-    
+
     def withdraw(self, an_amount):
         self.__balance -= an_amount
 
