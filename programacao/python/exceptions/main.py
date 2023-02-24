@@ -48,6 +48,8 @@ class CurrentAccount:
     def __set__agency(self, an_agency):
         if not isinstance(an_agency, int):
             raise ValueError("Attribute must be an integer")
+        if an_agency <= 0:
+            raise ValueError("Attribute must be greater than zero")
 
         self.__agency = an_agency
 
