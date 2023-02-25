@@ -65,9 +65,9 @@ class CurrentAccount:
 
     def __validate_value_is_a_positive_integer(self, a_value):
         if not isinstance(a_value, int):
-            raise ValueError("Attribute must be an integer")
+            raise ValueError(f"Attribute must be an integer: {repr(a_value)}")
         if a_value <= 0:
-            raise ValueError("Attribute must be greater than zero")
+            raise ValueError(f"Attribute must be greater than zero: {a_value}")
 
     def transfer(self, an_amount, an_account):
         self.withdraw(an_amount)
