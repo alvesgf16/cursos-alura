@@ -65,7 +65,7 @@ class CurrentAccount:
 
     def __validate_value_is_a_positive_integer(self, a_value):
         if not isinstance(a_value, int):
-            raise ValueError(f"Attribute must be an integer: {repr(a_value)}")
+            raise TypeError(f"Attribute must be an integer: {repr(a_value)}")
         if a_value <= 0:
             raise ValueError(f"Attribute must be greater than zero: {a_value}")
 

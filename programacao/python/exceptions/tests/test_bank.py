@@ -87,7 +87,7 @@ class TestCurrentAccount(unittest.TestCase):
         assert CurrentAccount.operation_fee == 15
 
     def test_agency_is_an_integer(self):
-        with pytest.raises(ValueError, match="Attribute must be an integer"):
+        with pytest.raises(TypeError, match="Attribute must be an integer"):
             agency_str = "1"
             CurrentAccount(self.customer, agency_str, self.number)
 
@@ -99,7 +99,7 @@ class TestCurrentAccount(unittest.TestCase):
             CurrentAccount(self.customer, agency_non_positive, self.number)
 
     def test_number_is_an_integer(self):
-        with pytest.raises(ValueError, match="Attribute must be an integer"):
+        with pytest.raises(TypeError, match="Attribute must be an integer"):
             number_str = "00001"
             CurrentAccount(self.customer, self.agency, number_str)
 
