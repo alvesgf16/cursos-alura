@@ -2,7 +2,7 @@ import unittest
 
 import pytest
 
-from main import Customer, CurrentAccount
+from bank import Customer, CurrentAccount
 
 
 class TestCustomer(unittest.TestCase):
