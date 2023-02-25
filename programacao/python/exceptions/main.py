@@ -12,6 +12,9 @@ while True:
         customer = Customer(name, None, None)
         current_account = CurrentAccount(customer, agency, number)
         accounts.append(current_account)
+    except (TypeError, ValueError) as E:
+        print(E.args)
+        sys.exit()
     except KeyboardInterrupt:
         print(f"\n\n{len(accounts)} accounts created")
         sys.exit()
