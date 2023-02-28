@@ -59,6 +59,14 @@ class TestCurrentAccount(unittest.TestCase):
 
         assert self.account.balance == balance_after_withdrawal
 
+    def test_withdrawing_a_negative_value_raises_an_error(self):
+        withdrawal_amount = -10
+
+        with pytest.raises(
+            ValueError, match="Withdrawal amount cannot be less than 0"
+        ):
+            self.account.withdraw(withdrawal_amount)
+
     def test_withdrawing_more_than_the_available_funds_raises_an_error(self):
         withdrawal_amount = 150
 

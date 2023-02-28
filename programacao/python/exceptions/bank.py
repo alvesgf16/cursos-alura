@@ -83,6 +83,8 @@ class CurrentAccount:
         an_account.deposit(an_amount)
 
     def withdraw(self, an_amount):
+        if an_amount < 0:
+            raise ValueError("Withdrawal amount cannot be less than 0")
         if self.balance < an_amount:
             raise InsufficientFundsError(
                 a_balance=self.balance, an_amount=an_amount
