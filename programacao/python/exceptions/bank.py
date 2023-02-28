@@ -84,7 +84,9 @@ class CurrentAccount:
 
     def withdraw(self, an_amount):
         if self.balance < an_amount:
-            raise InsufficientFundsError
+            raise InsufficientFundsError(
+                a_balance=self.balance, an_amount=an_amount
+            )
         self.balance -= an_amount
 
     def deposit(self, an_amount):

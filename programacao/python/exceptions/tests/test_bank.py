@@ -62,7 +62,11 @@ class TestCurrentAccount(unittest.TestCase):
     def test_withdrawing_more_than_the_available_funds_raises_an_error(self):
         withdrawal_amount = 150
 
-        with pytest.raises(InsufficientFundsError):
+        with pytest.raises(
+            InsufficientFundsError,
+            match="Insufficient balance to carry out the transaction\n"
+            + "Current balance: 100 - Amount to be withdrawn: 150",
+        ):
             self.account.withdraw(withdrawal_amount)
 
     def test_deposit_increases_balance(self):
