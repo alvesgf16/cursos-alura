@@ -1,3 +1,6 @@
+from exceptions import InsufficientFundsError
+
+
 class Customer:
     def __init__(self, a_name, a_cpf, an_occupation):
         self.__name = a_name
@@ -40,7 +43,7 @@ class CurrentAccount:
 
     @balance.setter
     def balance(self, a_balance):
-        self.__validate_value_is_a_positive_integer(a_balance)
+        self.__validate_value_is_an_integer(a_balance)
         self.__balance = a_balance
 
     @property
@@ -80,6 +83,8 @@ class CurrentAccount:
         an_account.deposit(an_amount)
 
     def withdraw(self, an_amount):
+        if self.balance < an_amount:
+            raise InsufficientFundsError
         self.balance -= an_amount
 
     def deposit(self, an_amount):

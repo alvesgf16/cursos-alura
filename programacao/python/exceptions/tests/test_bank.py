@@ -3,6 +3,7 @@ import unittest
 import pytest
 
 from bank import Customer, CurrentAccount
+from exceptions import InsufficientFundsError
 
 
 class TestCustomer(unittest.TestCase):
@@ -57,6 +58,12 @@ class TestCurrentAccount(unittest.TestCase):
         self.account.withdraw(withdrawal_amount)
 
         assert self.account.balance == balance_after_withdrawal
+
+    def test_withdrawing_more_than_the_available_funds_raises_an_error(self):
+        withdrawal_amount = 150
+
+        with pytest.raises(InsufficientFundsError):
+            self.account.withdraw(withdrawal_amount)
 
     def test_deposit_increases_balance(self):
         deposit_amount = 10
