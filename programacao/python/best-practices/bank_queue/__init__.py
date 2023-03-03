@@ -20,11 +20,10 @@ class BankQueue(ABC):
         self.__add_customer_to_queue()
 
     def __reset_queue(self) -> None:
-        self._code = (
-            STANDARD_QUEUE_RESET_CODE
-            if self._code >= STANDARD_MAX_LENGTH
-            else self._code + 1
-        )
+        if self._code >= STANDARD_MAX_LENGTH:
+            self._code = STANDARD_QUEUE_RESET_CODE
+        else:
+            self._code += 1
 
     @abstractmethod
     def _generate_current_password(self) -> None:

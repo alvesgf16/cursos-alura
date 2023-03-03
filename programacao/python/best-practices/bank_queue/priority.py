@@ -1,4 +1,4 @@
-from bank_queues.bank_queue import BankQueue
+from bank_queue import BankQueue
 from consts import PRIORITY_CODE
 from stats import RenderedStats, Stats
 
